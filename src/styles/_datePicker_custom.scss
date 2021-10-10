@@ -1,0 +1,37 @@
+@import '~vue-datetime/dist/vue-datetime.css';
+/*
+Overriding DATE TIME CSS
+ */
+.vdatetime-popup__body{
+  font-family: $default-font !important;
+}
+.vdatetime-popup__header{
+  background: $blue-bg !important;
+}
+.vdatetime-calendar__month__day--selected > span > span, .vdatetime-calendar__month__day--selected:hover > span > span {
+  color: #fff;
+  background: $blue-bg !important;
+}
+
+.vdatetime-popup__actions__button{
+  color: $blue-bg !important;
+}
+
+.vdatetime-time-picker__item--selected{
+  color: $blue-bg !important;
+}
+.vdatetime-input{
+  display: block !important;
+  width: 100% !important;
+  height: calc(1.5em + 0.75rem + 2px) !important;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
