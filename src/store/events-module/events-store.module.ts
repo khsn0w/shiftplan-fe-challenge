@@ -91,14 +91,17 @@ const EventsStoreModule: Module<EventStoreModel, any> = {
             commit('setLoadingStatus', true);
             try {
                 preProcessPayload(payload);
+                console.log(payload);
                 if (compare(payload, state))
                 {
                     commit('setLoadingStatus', false);
                     return;
                 }
                 const response = await EventService.getAllEvents(payload);
-                const resetEvents = (response.data.items && response.data.items.length == 0) || !shouldNotReset(payload, state);
+                const toCompare = {...state, ...payload}
+                const resetEvents = (response.data.items && response.data.items.length == 0) || !shouldNotReset(toCompare, state);
                 commit('updatePayload', {...state, ...payload});
+                console.log('WILL RESET', resetEvents)
                 if (resetEvents) {
                     commit('resetEvents', response.data.items);
                 } else {
